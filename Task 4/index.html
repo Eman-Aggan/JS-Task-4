@@ -85,25 +85,39 @@
 <body>
    <div class="box">
     <h1>To Do List</h1>
-   <input type="text"  id="in" placeholder="Add new task" required>
-    <button type="submit" id="btn"> Add New Task  <i class="fa-solid fa-check"></i> </button> 
+   <input type="text"  id="in" placeholder="Add new task"  required>
+    <button type="submit" id="btn" > Add New Task  <i class="fa-solid fa-check"></i> </button> 
     <div class="task" id="task">
          <div class="ntask"  id="ntask"> </div>
-        <button  class="del"> Delete</button>
+        <button  class="del" onclick="Delete()"> Delete</button>
     </div>
 </div>
 
 <script>
 
 const tasks = [];
-const ntask = document.getElementById("ntask");
-const task = document.getElementById("task");
+const tasky = (document.getElementById("in"));
+const tasksContainer = document.getElementById("task");
 
 document.getElementById("btn").addEventListener('click' ,()=>{
-   tasks.push(ntask);
-   console.log(tasks)
+   if(tasky){
+      tasks.push(tasky.value);
+      console.log(tasks);
+     
 
-})
+      document.getElementById("in").value = "";
+   
+      
+   }
+
+
+} );
+
+
+
+
+
+
 
 
 </script>
